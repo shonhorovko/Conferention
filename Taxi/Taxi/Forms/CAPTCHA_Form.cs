@@ -1,8 +1,8 @@
-﻿using ClassLibTaxi;
+﻿using ClassLibConferention;
 using System;
 using System.Drawing;
 
-namespace Taxi.Forms
+namespace Conferention.Forms
 {
     public partial class CAPTCHA_Form : FormParent
     {

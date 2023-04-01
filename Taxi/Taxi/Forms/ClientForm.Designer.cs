@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Taxi.Forms
+namespace Conferention.Forms
 {
     partial class ClientForm
     {

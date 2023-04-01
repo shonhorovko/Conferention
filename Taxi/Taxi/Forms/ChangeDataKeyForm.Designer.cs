@@ -1,4 +1,4 @@
-﻿namespace Taxi.Forms
+﻿namespace Conferention.Forms
 {
     partial class ChangeDataKeyForm
     {

@@ -1,0 +1,9 @@
+C:\Users\shonhorovko\source\repos\Taxi\ClassLibTaxi\bin\Debug\ClassLibTaxi.dll
+C:\Users\shonhorovko\source\repos\Taxi\ClassLibTaxi\bin\Debug\ClassLibTaxi.pdb
+C:\Users\shonhorovko\source\repos\Taxi\ClassLibTaxi\obj\Debug\ClassLibConferention.csproj.AssemblyReference.cache
+C:\Users\shonhorovko\source\repos\Taxi\ClassLibTaxi\obj\Debug\ClassLibConferention.FormParent.resources
+C:\Users\shonhorovko\source\repos\Taxi\ClassLibTaxi\obj\Debug\ClassLibTaxi.Properties.Resources.resources
+C:\Users\shonhorovko\source\repos\Taxi\ClassLibTaxi\obj\Debug\ClassLibConferention.csproj.GenerateResource.cache
+C:\Users\shonhorovko\source\repos\Taxi\ClassLibTaxi\obj\Debug\ClassLibConferention.csproj.CoreCompileInputs.cache
+C:\Users\shonhorovko\source\repos\Taxi\ClassLibTaxi\obj\Debug\ClassLibTaxi.dll
+C:\Users\shonhorovko\source\repos\Taxi\ClassLibTaxi\obj\Debug\ClassLibTaxi.pdb

@@ -1,4 +1,4 @@
-﻿namespace Taxi.Forms
+﻿namespace Conferention.Forms
 {
     partial class SignInForm
     {
@@ -59,7 +59,8 @@
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel4, 0, 3);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 33);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(4, 42);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 5;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -67,7 +68,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.00001F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(196, 249);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(234, 313);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // tableLayoutPanel2
@@ -78,23 +79,25 @@
             this.tableLayoutPanel2.Controls.Add(this.TBPassword, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.LPassword, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 80);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(4, 73);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(190, 55);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(226, 67);
             this.tableLayoutPanel2.TabIndex = 6;
             // 
             // TBPassword
             // 
             this.TBPassword.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TBPassword.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.TBPassword.Location = new System.Drawing.Point(3, 21);
+            this.TBPassword.Location = new System.Drawing.Point(4, 27);
+            this.TBPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.TBPassword.MaxLength = 255;
             this.TBPassword.Name = "TBPassword";
             this.TBPassword.PasswordChar = '*';
-            this.TBPassword.Size = new System.Drawing.Size(184, 31);
+            this.TBPassword.Size = new System.Drawing.Size(218, 36);
             this.TBPassword.TabIndex = 5;
             // 
             // LPassword
@@ -103,9 +106,10 @@
             this.LPassword.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.LPassword.Font = new System.Drawing.Font("Calibri", 11.25F);
             this.LPassword.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.LPassword.Location = new System.Drawing.Point(3, 0);
+            this.LPassword.Location = new System.Drawing.Point(4, 0);
+            this.LPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LPassword.Name = "LPassword";
-            this.LPassword.Size = new System.Drawing.Size(184, 18);
+            this.LPassword.Size = new System.Drawing.Size(218, 23);
             this.LPassword.TabIndex = 4;
             this.LPassword.Text = "Пароль";
             // 
@@ -116,22 +120,24 @@
             this.tableLayoutPanel3.Controls.Add(this.TBLogin, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.LLogin, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 4);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(4, -23);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(190, 70);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(226, 88);
             this.tableLayoutPanel3.TabIndex = 7;
             // 
             // TBLogin
             // 
             this.TBLogin.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TBLogin.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.TBLogin.Location = new System.Drawing.Point(3, 38);
+            this.TBLogin.Location = new System.Drawing.Point(4, 48);
+            this.TBLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.TBLogin.MaxLength = 255;
             this.TBLogin.Name = "TBLogin";
-            this.TBLogin.Size = new System.Drawing.Size(184, 31);
+            this.TBLogin.Size = new System.Drawing.Size(218, 36);
             this.TBLogin.TabIndex = 10;
             // 
             // LLogin
@@ -140,11 +146,12 @@
             this.LLogin.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.LLogin.Font = new System.Drawing.Font("Calibri", 11.25F);
             this.LLogin.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.LLogin.Location = new System.Drawing.Point(3, 17);
+            this.LLogin.Location = new System.Drawing.Point(4, 21);
+            this.LLogin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LLogin.Name = "LLogin";
-            this.LLogin.Size = new System.Drawing.Size(184, 18);
+            this.LLogin.Size = new System.Drawing.Size(218, 23);
             this.LLogin.TabIndex = 9;
-            this.LLogin.Text = "Логин";
+            this.LLogin.Text = "Email";
             // 
             // tableLayoutPanel4
             // 
@@ -154,12 +161,13 @@
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel5, 0, 1);
             this.tableLayoutPanel4.Controls.Add(this.BtnLogin, 0, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 141);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(4, 148);
+            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 2;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(190, 102);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(226, 190);
             this.tableLayoutPanel4.TabIndex = 9;
             // 
             // tableLayoutPanel5
@@ -171,13 +179,14 @@
             this.tableLayoutPanel5.Controls.Add(this.LAnotherLogin, 0, 1);
             this.tableLayoutPanel5.Controls.Add(this.LNonRegistered, 0, 0);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 42);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(4, 54);
+            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 3;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(184, 57);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(218, 132);
             this.tableLayoutPanel5.TabIndex = 15;
             // 
             // LIncorrectLogin
@@ -187,11 +196,12 @@
             this.LIncorrectLogin.Dock = System.Windows.Forms.DockStyle.Top;
             this.LIncorrectLogin.Font = new System.Drawing.Font("Calibri", 10.25F);
             this.LIncorrectLogin.ForeColor = System.Drawing.Color.Red;
-            this.LIncorrectLogin.Location = new System.Drawing.Point(3, 38);
+            this.LIncorrectLogin.Location = new System.Drawing.Point(4, 88);
+            this.LIncorrectLogin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LIncorrectLogin.Name = "LIncorrectLogin";
-            this.LIncorrectLogin.Size = new System.Drawing.Size(178, 17);
+            this.LIncorrectLogin.Size = new System.Drawing.Size(210, 44);
             this.LIncorrectLogin.TabIndex = 15;
-            this.LIncorrectLogin.Text = "Неверный логин или пароль";
+            this.LIncorrectLogin.Text = "Неверный Email или пароль";
             this.LIncorrectLogin.Visible = false;
             // 
             // LAnotherLogin
@@ -201,11 +211,12 @@
             this.LAnotherLogin.Dock = System.Windows.Forms.DockStyle.Top;
             this.LAnotherLogin.Font = new System.Drawing.Font("Calibri", 10.25F);
             this.LAnotherLogin.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.LAnotherLogin.Location = new System.Drawing.Point(3, 19);
+            this.LAnotherLogin.Location = new System.Drawing.Point(4, 44);
+            this.LAnotherLogin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LAnotherLogin.Name = "LAnotherLogin";
-            this.LAnotherLogin.Size = new System.Drawing.Size(178, 17);
+            this.LAnotherLogin.Size = new System.Drawing.Size(210, 22);
             this.LAnotherLogin.TabIndex = 14;
-            this.LAnotherLogin.Text = "Войти как водитель?";
+            this.LAnotherLogin.Text = "Войти как жюри?";
             this.LAnotherLogin.Click += new System.EventHandler(this.LoginOrganization);
             this.LAnotherLogin.MouseLeave += new System.EventHandler(this.AnotherLogIOUT);
             this.LAnotherLogin.MouseMove += new System.Windows.Forms.MouseEventHandler(this.AnotherLogIN);
@@ -216,9 +227,10 @@
             this.LNonRegistered.Dock = System.Windows.Forms.DockStyle.Top;
             this.LNonRegistered.Font = new System.Drawing.Font("Calibri", 10.25F);
             this.LNonRegistered.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.LNonRegistered.Location = new System.Drawing.Point(3, 0);
+            this.LNonRegistered.Location = new System.Drawing.Point(4, 0);
+            this.LNonRegistered.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LNonRegistered.Name = "LNonRegistered";
-            this.LNonRegistered.Size = new System.Drawing.Size(178, 19);
+            this.LNonRegistered.Size = new System.Drawing.Size(210, 24);
             this.LNonRegistered.TabIndex = 13;
             this.LNonRegistered.Text = "Ещё не зарегестрированы?";
             this.LNonRegistered.Click += new System.EventHandler(this.LoginForm);
@@ -230,10 +242,11 @@
             this.BtnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnLogin.Dock = System.Windows.Forms.DockStyle.Fill;
             this.BtnLogin.Font = new System.Drawing.Font("Calibri", 12.25F, System.Drawing.FontStyle.Bold);
-            this.BtnLogin.Location = new System.Drawing.Point(3, 3);
-            this.BtnLogin.MinimumSize = new System.Drawing.Size(128, 33);
+            this.BtnLogin.Location = new System.Drawing.Point(4, 4);
+            this.BtnLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BtnLogin.MinimumSize = new System.Drawing.Size(154, 42);
             this.BtnLogin.Name = "BtnLogin";
-            this.BtnLogin.Size = new System.Drawing.Size(184, 33);
+            this.BtnLogin.Size = new System.Drawing.Size(218, 42);
             this.BtnLogin.TabIndex = 11;
             this.BtnLogin.Text = "Войти";
             this.BtnLogin.UseVisualStyleBackColor = true;
@@ -246,19 +259,23 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.GBRegistration.Controls.Add(this.tableLayoutPanel1);
             this.GBRegistration.Font = new System.Drawing.Font("Calibri", 18.25F, System.Drawing.FontStyle.Bold);
-            this.GBRegistration.Location = new System.Drawing.Point(199, 45);
-            this.GBRegistration.MinimumSize = new System.Drawing.Size(191, 285);
+            this.GBRegistration.Location = new System.Drawing.Point(239, 57);
+            this.GBRegistration.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.GBRegistration.MinimumSize = new System.Drawing.Size(229, 359);
             this.GBRegistration.Name = "GBRegistration";
-            this.GBRegistration.Size = new System.Drawing.Size(202, 285);
+            this.GBRegistration.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.GBRegistration.Size = new System.Drawing.Size(242, 359);
             this.GBRegistration.TabIndex = 2;
             this.GBRegistration.TabStop = false;
             this.GBRegistration.Text = "Вход";
             // 
             // SignInForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
-            this.ClientSize = new System.Drawing.Size(584, 361);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 29F);
+            this.ClientSize = new System.Drawing.Size(701, 455);
             this.Controls.Add(this.GBRegistration);
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.MinimumSize = new System.Drawing.Size(716, 492);
             this.Name = "SignInForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ExitProgram);

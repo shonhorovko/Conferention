@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Taxi.Properties
+namespace Conferention.Properties
 {
 
 

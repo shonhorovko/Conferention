@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ClassLibTaxi.Properties {
+namespace ClassLibConferention.Properties {
     using System;
     
     

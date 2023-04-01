@@ -4,9 +4,9 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
-using Taxi.Classes;
+using Conferention.Classes;
 
-namespace Taxi.Forms
+namespace Conferention.Forms
 {
     public partial class ClientForm : Form
     {

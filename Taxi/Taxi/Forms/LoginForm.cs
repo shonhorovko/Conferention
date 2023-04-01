@@ -7,11 +7,11 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
-using Taxi.Classes;
+using Conferention.Classes;
 
-namespace Taxi.Forms
+namespace Conferention.Forms
 {
-    public partial class LoginForm : ClassLibTaxi.FormParent
+    public partial class LoginForm : ClassLibConferention.FormParent
     {
         public static bool IsDriver = false;
         public static string ConnectionAdress = ConnectionString.strconn;

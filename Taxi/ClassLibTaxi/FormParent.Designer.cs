@@ -1,4 +1,4 @@
-﻿namespace ClassLibTaxi
+﻿namespace ClassLibConferention
 {
     partial class FormParent
     {
@@ -70,7 +70,7 @@
             this.Margin = new System.Windows.Forms.Padding(5);
             this.MinimumSize = new System.Drawing.Size(600, 400);
             this.Name = "FormParent";
-            this.Text = "Taxi";
+            this.Text = "Conferention";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).EndInit();
             this.ResumeLayout(false);

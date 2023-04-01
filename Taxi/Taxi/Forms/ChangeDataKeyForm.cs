@@ -9,11 +9,11 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Taxi.Classes;
-using Taxi.Forms;
+using Conferention.Classes;
+using Conferention.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
-namespace Taxi.Forms
+namespace Conferention.Forms
 {
     public partial class ChangeDataKeyForm : Form
     {

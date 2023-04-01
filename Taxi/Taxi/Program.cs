@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Taxi.Forms;
+using Conferention.Forms;
 
-namespace Taxi
+namespace Conferention
 {
     internal static class Program
     {
