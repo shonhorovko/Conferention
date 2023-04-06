@@ -1,7 +1,7 @@
 ﻿/*
  * CLASS: Base class for implementing authorization functionality (SignInForm)
  * WHO CREATED: shonkhorovkirill2005@gmail.com (Shonkhorov Kirill)
- * DATE: 01.04.23
+ * DATE: 06.04.23
 */
 using System;
 using System.Data;
@@ -19,9 +19,9 @@ namespace Conferention.Forms
     {
         //+++User's roles
         public static bool IsParticipant = true;
-        public static bool IsJury = true;
-        public static bool IsModerator = true;
-        public static bool IsOrganizer = true;
+        public static bool IsJury = false;
+        public static bool IsModerator = false;
+        public static bool IsOrganizer = false;
         //---
 
         //+++Connection String
@@ -65,8 +65,17 @@ namespace Conferention.Forms
         private void LoginForm(object sender, EventArgs e)
         {
             this.Hide();
-            LoginForm loginForm = new LoginForm();
-            loginForm.Show();
+            //LoginForm loginForm = new LoginForm();
+            //loginForm.Show();
+        }
+        //---
+        //+++Show ClientForm
+        private void ClientFormLoad()
+        {
+            ClientForm.UserEmail = TBLogin.Text;
+            this.Hide();
+            ClientForm userForm = new ClientForm();
+            userForm.Show();
         }
         //---
 
@@ -80,10 +89,11 @@ namespace Conferention.Forms
                 IsModerator = false;
                 IsOrganizer = false;
 
-                LAnotherLogin.Text = "Войти как жюри?";
+                LAnotherLogin.Text = "Войти как модератор?";
 
                 LIncorrectLogin.Text = "";
                 LIncorrectLogin.Visible = false;
+                return;
             }
             else if (IsJury)
             {
@@ -92,10 +102,12 @@ namespace Conferention.Forms
                 IsModerator = true;
                 IsOrganizer = false;
 
-                LAnotherLogin.Text = "Войти как модератор?";
+                LAnotherLogin.Text = "Войти как организатор?";
 
                 LIncorrectLogin.Text = "";
                 LIncorrectLogin.Visible = false;
+                return;
+
             }
             else if (IsModerator)
             {
@@ -104,10 +116,12 @@ namespace Conferention.Forms
                 IsModerator = false;
                 IsOrganizer = true;
 
-                LAnotherLogin.Text = "Войти как организатор?";
+                LAnotherLogin.Text = "Войти как участник?";
 
                 LIncorrectLogin.Text = "";
                 LIncorrectLogin.Visible = false;
+                return;
+
             }
             else if (IsOrganizer)
             {
@@ -116,10 +130,11 @@ namespace Conferention.Forms
                 IsModerator = false;
                 IsOrganizer = false;
 
-                LAnotherLogin.Text = "Войти как участник?";
+                LAnotherLogin.Text = "Войти как жюри?";
 
                 LIncorrectLogin.Text = "";
                 LIncorrectLogin.Visible = false;
+                return;
             }
         }
         //---
@@ -217,17 +232,14 @@ namespace Conferention.Forms
         {
             if (FieldsIsEmpty())
             {
-                string Password = SaltPassword();
+                string Password = TBPassword.Text;//Password();
                 string SQL = "SELECT * FROM conferention.[Участники] " +
                     "WHERE [Почта] ='" + TBLogin.Text + "' AND [пароль] = '" + Password + "'";
 
                 if (TryToConnect(SQL))
                 {
-                    /*ClientForm.IsDriver = false;
-                    ClientForm.UserLogin = TBLogin.Text;
-                    this.Hide();
-                    ClientForm userForm = new ClientForm();
-                    userForm.Show();*/
+                    ClientForm.IsParticipant = true;
+                    ClientFormLoad();
                 }
             }
         }
@@ -235,17 +247,14 @@ namespace Conferention.Forms
         {
             if (FieldsIsEmpty())
             {
-                string Password = SaltPassword();
+                string Password = TBPassword.Text;//Password();
                 string SQL = "SELECT * FROM conferention.[Жюри] " +
                     "WHERE [Почта] ='" + TBLogin.Text + "' AND [пароль] = '" + Password + "'";
 
                 if (TryToConnect(SQL))
                 {
-                    /*ClientForm.IsDriver = false;
-                    ClientForm.UserLogin = TBLogin.Text;
-                    this.Hide();
-                    ClientForm userForm = new ClientForm();
-                    userForm.Show();*/
+                    ClientForm.IsJury = true;
+                    ClientFormLoad();
                 }
             }
         }
@@ -253,17 +262,14 @@ namespace Conferention.Forms
         {
             if (FieldsIsEmpty())
             {
-                string Password = SaltPassword();
+                string Password = TBPassword.Text;//Password();
                 string SQL = "SELECT * FROM conferention.[Модераторы] " +
                     "WHERE [Почта] ='" + TBLogin.Text + "' AND [пароль] = '" + Password + "'";
 
                 if (TryToConnect(SQL))
                 {
-                    /*ClientForm.IsDriver = false;
-                    ClientForm.UserLogin = TBLogin.Text;
-                    this.Hide();
-                    ClientForm userForm = new ClientForm();
-                    userForm.Show();*/
+                    ClientForm.IsModerator = true;
+                    ClientFormLoad();
                 }
             }
         }
@@ -271,115 +277,17 @@ namespace Conferention.Forms
         {
             if (FieldsIsEmpty())
             {
-                string Password = SaltPassword();
+                string Password = TBPassword.Text;//Password();
                 string SQL = "SELECT * FROM conferention.[Организаторы] " +
                     "WHERE [Почта] ='" + TBLogin.Text + "' AND [пароль] = '" + Password + "'";
 
                 if (TryToConnect(SQL))
                 {
-                    /*ClientForm.IsDriver = false;
-                    ClientForm.UserLogin = TBLogin.Text;
-                    this.Hide();
-                    ClientForm userForm = new ClientForm();
-                    userForm.Show();*/
+                    ClientForm.IsOrganizer = true;
+                    ClientFormLoad();
                 }
             }
         }
         //---
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*if (TBLogin.Text == "" || TBPassword.Text == "")
-            {
-                LIncorrectLogin.Text = "Заполните все поля";
-                LIncorrectLogin.Visible = true;
-            }
-            else
-            {
-                if (!IsDriver)
-                {
-
-                    using (SqlConnection connection = new SqlConnection(ConnectionAdress))
-                    {
-                        connection.Open();
-
-                        // посыпаем солью
-                        string Salt1 = "6r-2"; string Salt2 = "&0sw";
-                        string SaltPassword = Salt1 + TBPassword.Text + Salt2;
-                        string Password = GetHash(SaltPassword);
-
-                        string SQL = "SELECT * FROM Taxi.Users WHERE Login ='" +
-                        TBLogin.Text + "' AND Password = '" + Password + "'";
-
-                        SqlCommand command = new SqlCommand(SQL, connection);
-                        SqlDataReader sqlReader = command.ExecuteReader();
-
-                        if (sqlReader.HasRows == true)
-                        {
-                            ClientForm.IsDriver = false;
-                            ClientForm.UserLogin = TBLogin.Text;
-                            this.Hide();
-                            ClientForm userForm = new ClientForm();
-                            userForm.Show();
-                        }
-                        else
-                        {
-                            LIncorrectLogin.Text = "Неверный логин или пароль";
-                            LIncorrectLogin.Visible = true;
-                        }
-
-                    }
-                }
-                else
-                {
-                    using (SqlConnection connection = new SqlConnection(ConnectionAdress))
-                    {
-                        connection.Open();
-
-                        // посыпаем солью
-                        string Salt1 = "6r-2"; string Salt2 = "&0sw";
-                        string SaltPassword = Salt1 + TBPassword.Text + Salt2;
-                        string Password = GetHash(SaltPassword);
-
-                        string SQL = "SELECT * FROM Taxi.Drivers WHERE Login ='" +
-                        TBLogin.Text + "' AND Password = '" + Password + "'";
-
-                        SqlCommand command = new SqlCommand(SQL, connection);
-                        SqlDataReader sqlReader = command.ExecuteReader();
-
-                        if (sqlReader.HasRows == true)
-                        {
-                            ClientForm.IsDriver = true;
-                            ClientForm.UserLogin = TBLogin.Text;
-                            this.Hide();
-                            ClientForm clientForm = new ClientForm();
-                            clientForm.Show();
-                        }
-                        else
-                        {
-                            LIncorrectLogin.Text = "Неверный логин или пароль";
-                            LIncorrectLogin.Visible = true;
-                        }
-
-                    }
-                }
-            }*/

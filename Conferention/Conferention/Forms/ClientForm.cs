@@ -10,10 +10,45 @@ namespace Conferention.Forms
 {
     public partial class ClientForm : Form
     {
+        //+++User's roles
+        public static bool IsParticipant = false;
+        public static bool IsJury = false;
+        public static bool IsModerator = false;
+        public static bool IsOrganizer = false;
+        //---
+
+        public static string UserEmail;
+
+        public ClientForm()
+        {
+            InitializeComponent();
+        }
+
+        private void ExitProgram(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void BExitAccount_Click(object sender, EventArgs e)
+        {
+            UserEmail = null;
+            this.Hide();
+            SignInForm signInForm = new SignInForm();
+            signInForm.Show();
+        }
+
+        /*private bool DoEditing = false;
+
+        //+++User's roles
+        public static bool IsParticipant = true;
+        public static bool IsJury = false;
+        public static bool IsModerator = false;
+        public static bool IsOrganizer = false;
+        //---
+
         private string UserIcon;
-        private bool DoEditing = false;
-        public static bool IsDriver = false;
         public static string UserLogin;
+
         public static string ConnectionAdress = ConnectionString.strconn;
 
         public ClientForm()
@@ -304,6 +339,6 @@ namespace Conferention.Forms
             {
                 e.Handled = true;
             }
-        }
+        }*/
     }
 }

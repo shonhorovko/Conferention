@@ -24,3 +24,12 @@ C:\Users\shonhorovko\Conferention\ClassLibConferention\obj\Debug\ClassLibConfere
 C:\Users\shonhorovko\Conferention\ClassLibConferention\obj\Debug\ClassLibConferention.csproj.CoreCompileInputs.cache
 C:\Users\shonhorovko\Conferention\ClassLibConferention\obj\Debug\ClassLibTaxi.dll
 C:\Users\shonhorovko\Conferention\ClassLibConferention\obj\Debug\ClassLibTaxi.pdb
+C:\Users\shonhorovko\Conferention\Conferention\ClassLibConferention\bin\Debug\ClassLibTaxi.dll
+C:\Users\shonhorovko\Conferention\Conferention\ClassLibConferention\bin\Debug\ClassLibTaxi.pdb
+C:\Users\shonhorovko\Conferention\Conferention\ClassLibConferention\obj\Debug\ClassLibConferention.csproj.AssemblyReference.cache
+C:\Users\shonhorovko\Conferention\Conferention\ClassLibConferention\obj\Debug\ClassLibConferention.FormParent.resources
+C:\Users\shonhorovko\Conferention\Conferention\ClassLibConferention\obj\Debug\ClassLibTaxi.Properties.Resources.resources
+C:\Users\shonhorovko\Conferention\Conferention\ClassLibConferention\obj\Debug\ClassLibConferention.csproj.GenerateResource.cache
+C:\Users\shonhorovko\Conferention\Conferention\ClassLibConferention\obj\Debug\ClassLibConferention.csproj.CoreCompileInputs.cache
+C:\Users\shonhorovko\Conferention\Conferention\ClassLibConferention\obj\Debug\ClassLibTaxi.dll
+C:\Users\shonhorovko\Conferention\Conferention\ClassLibConferention\obj\Debug\ClassLibTaxi.pdb

@@ -1,4 +1,4 @@
-﻿namespace Conferention.Forms
+﻿/*namespace Conferention.Forms
 {
     partial class ChangeDataKeyForm
     {
@@ -213,4 +213,4 @@
         private System.Windows.Forms.Label LPass2;
         private System.Windows.Forms.TextBox TB_PassIsTrue;
     }
-}
+}*/
