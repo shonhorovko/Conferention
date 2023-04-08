@@ -31,22 +31,22 @@
             this.GBRegistration = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.TLP_CheckPassword = new System.Windows.Forms.TableLayoutPanel();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.TB_CheckPassword = new System.Windows.Forms.TextBox();
             this.L_CheckPassword = new System.Windows.Forms.Label();
             this.TLP_Password = new System.Windows.Forms.TableLayoutPanel();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.TB_Password = new System.Windows.Forms.TextBox();
             this.L_Password = new System.Windows.Forms.Label();
             this.TLP_Sex = new System.Windows.Forms.TableLayoutPanel();
             this.L_Sex = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.LB_Sex = new System.Windows.Forms.ListBox();
             this.TLP_Birthsday = new System.Windows.Forms.TableLayoutPanel();
             this.L_Birthsday = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.DTP_Birthsday = new System.Windows.Forms.DateTimePicker();
             this.TLP_Phone = new System.Windows.Forms.TableLayoutPanel();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.TB_Phone = new System.Windows.Forms.TextBox();
             this.L_Phone = new System.Windows.Forms.Label();
             this.TLP_Email = new System.Windows.Forms.TableLayoutPanel();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.TB_Email = new System.Windows.Forms.TextBox();
             this.L_Email = new System.Windows.Forms.Label();
             this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
             this.LIncorrectLogin = new System.Windows.Forms.Label();
@@ -58,7 +58,7 @@
             this.TB_Name = new System.Windows.Forms.TextBox();
             this.TLP_Country = new System.Windows.Forms.TableLayoutPanel();
             this.L_Country = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.CB_Country = new System.Windows.Forms.ComboBox();
             this.GBRegistration.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.TLP_CheckPassword.SuspendLayout();
@@ -127,7 +127,7 @@
             this.TLP_CheckPassword.AutoSize = true;
             this.TLP_CheckPassword.ColumnCount = 1;
             this.TLP_CheckPassword.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.TLP_CheckPassword.Controls.Add(this.textBox8, 0, 1);
+            this.TLP_CheckPassword.Controls.Add(this.TB_CheckPassword, 0, 1);
             this.TLP_CheckPassword.Controls.Add(this.L_CheckPassword, 0, 0);
             this.TLP_CheckPassword.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TLP_CheckPassword.Location = new System.Drawing.Point(261, 214);
@@ -138,14 +138,16 @@
             this.TLP_CheckPassword.Size = new System.Drawing.Size(252, 56);
             this.TLP_CheckPassword.TabIndex = 36;
             // 
-            // textBox8
+            // TB_CheckPassword
             // 
-            this.textBox8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox8.Font = new System.Drawing.Font("Calibri", 10.25F, System.Drawing.FontStyle.Bold);
-            this.textBox8.Location = new System.Drawing.Point(3, 25);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(246, 28);
-            this.textBox8.TabIndex = 2;
+            this.TB_CheckPassword.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TB_CheckPassword.Font = new System.Drawing.Font("Calibri", 10.25F, System.Drawing.FontStyle.Bold);
+            this.TB_CheckPassword.Location = new System.Drawing.Point(3, 25);
+            this.TB_CheckPassword.MaxLength = 255;
+            this.TB_CheckPassword.Name = "TB_CheckPassword";
+            this.TB_CheckPassword.PasswordChar = '*';
+            this.TB_CheckPassword.Size = new System.Drawing.Size(246, 28);
+            this.TB_CheckPassword.TabIndex = 2;
             // 
             // L_CheckPassword
             // 
@@ -163,7 +165,7 @@
             this.TLP_Password.AutoSize = true;
             this.TLP_Password.ColumnCount = 1;
             this.TLP_Password.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.TLP_Password.Controls.Add(this.textBox7, 0, 1);
+            this.TLP_Password.Controls.Add(this.TB_Password, 0, 1);
             this.TLP_Password.Controls.Add(this.L_Password, 0, 0);
             this.TLP_Password.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TLP_Password.Location = new System.Drawing.Point(3, 214);
@@ -174,14 +176,16 @@
             this.TLP_Password.Size = new System.Drawing.Size(252, 56);
             this.TLP_Password.TabIndex = 35;
             // 
-            // textBox7
+            // TB_Password
             // 
-            this.textBox7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox7.Font = new System.Drawing.Font("Calibri", 10.25F, System.Drawing.FontStyle.Bold);
-            this.textBox7.Location = new System.Drawing.Point(3, 25);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(246, 28);
-            this.textBox7.TabIndex = 2;
+            this.TB_Password.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TB_Password.Font = new System.Drawing.Font("Calibri", 10.25F, System.Drawing.FontStyle.Bold);
+            this.TB_Password.Location = new System.Drawing.Point(3, 25);
+            this.TB_Password.MaxLength = 255;
+            this.TB_Password.Name = "TB_Password";
+            this.TB_Password.PasswordChar = '*';
+            this.TB_Password.Size = new System.Drawing.Size(246, 28);
+            this.TB_Password.TabIndex = 2;
             // 
             // L_Password
             // 
@@ -200,7 +204,7 @@
             this.TLP_Sex.ColumnCount = 1;
             this.TLP_Sex.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.TLP_Sex.Controls.Add(this.L_Sex, 0, 0);
-            this.TLP_Sex.Controls.Add(this.listBox1, 0, 1);
+            this.TLP_Sex.Controls.Add(this.LB_Sex, 0, 1);
             this.TLP_Sex.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TLP_Sex.Location = new System.Drawing.Point(261, 152);
             this.TLP_Sex.Name = "TLP_Sex";
@@ -221,19 +225,19 @@
             this.L_Sex.TabIndex = 0;
             this.L_Sex.Text = "Пол";
             // 
-            // listBox1
+            // LB_Sex
             // 
-            this.listBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.listBox1.Font = new System.Drawing.Font("Calibri", 10.25F);
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 21;
-            this.listBox1.Items.AddRange(new object[] {
+            this.LB_Sex.Dock = System.Windows.Forms.DockStyle.Top;
+            this.LB_Sex.Font = new System.Drawing.Font("Calibri", 10.25F);
+            this.LB_Sex.FormattingEnabled = true;
+            this.LB_Sex.ItemHeight = 21;
+            this.LB_Sex.Items.AddRange(new object[] {
             "мужской",
             "женский"});
-            this.listBox1.Location = new System.Drawing.Point(3, 25);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(246, 25);
-            this.listBox1.TabIndex = 1;
+            this.LB_Sex.Location = new System.Drawing.Point(3, 25);
+            this.LB_Sex.Name = "LB_Sex";
+            this.LB_Sex.Size = new System.Drawing.Size(246, 25);
+            this.LB_Sex.TabIndex = 1;
             // 
             // TLP_Birthsday
             // 
@@ -241,7 +245,7 @@
             this.TLP_Birthsday.ColumnCount = 1;
             this.TLP_Birthsday.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.TLP_Birthsday.Controls.Add(this.L_Birthsday, 0, 0);
-            this.TLP_Birthsday.Controls.Add(this.dateTimePicker1, 0, 1);
+            this.TLP_Birthsday.Controls.Add(this.DTP_Birthsday, 0, 1);
             this.TLP_Birthsday.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TLP_Birthsday.Location = new System.Drawing.Point(3, 152);
             this.TLP_Birthsday.Name = "TLP_Birthsday";
@@ -262,24 +266,24 @@
             this.L_Birthsday.TabIndex = 0;
             this.L_Birthsday.Text = "Дата рождения";
             // 
-            // dateTimePicker1
+            // DTP_Birthsday
             // 
-            this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.dateTimePicker1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.dateTimePicker1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dateTimePicker1.Font = new System.Drawing.Font("Calibri", 10.25F);
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(3, 25);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(246, 28);
-            this.dateTimePicker1.TabIndex = 1;
+            this.DTP_Birthsday.CalendarFont = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.DTP_Birthsday.Cursor = System.Windows.Forms.Cursors.Default;
+            this.DTP_Birthsday.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DTP_Birthsday.Font = new System.Drawing.Font("Calibri", 10.25F);
+            this.DTP_Birthsday.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DTP_Birthsday.Location = new System.Drawing.Point(3, 25);
+            this.DTP_Birthsday.Name = "DTP_Birthsday";
+            this.DTP_Birthsday.Size = new System.Drawing.Size(246, 28);
+            this.DTP_Birthsday.TabIndex = 1;
             // 
             // TLP_Phone
             // 
             this.TLP_Phone.AutoSize = true;
             this.TLP_Phone.ColumnCount = 1;
             this.TLP_Phone.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.TLP_Phone.Controls.Add(this.textBox4, 0, 1);
+            this.TLP_Phone.Controls.Add(this.TB_Phone, 0, 1);
             this.TLP_Phone.Controls.Add(this.L_Phone, 0, 0);
             this.TLP_Phone.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TLP_Phone.Location = new System.Drawing.Point(261, 90);
@@ -290,14 +294,15 @@
             this.TLP_Phone.Size = new System.Drawing.Size(252, 56);
             this.TLP_Phone.TabIndex = 32;
             // 
-            // textBox4
+            // TB_Phone
             // 
-            this.textBox4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox4.Font = new System.Drawing.Font("Calibri", 10.25F, System.Drawing.FontStyle.Bold);
-            this.textBox4.Location = new System.Drawing.Point(3, 25);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(246, 28);
-            this.textBox4.TabIndex = 2;
+            this.TB_Phone.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TB_Phone.Font = new System.Drawing.Font("Calibri", 10.25F, System.Drawing.FontStyle.Bold);
+            this.TB_Phone.Location = new System.Drawing.Point(3, 25);
+            this.TB_Phone.MaxLength = 32;
+            this.TB_Phone.Name = "TB_Phone";
+            this.TB_Phone.Size = new System.Drawing.Size(246, 28);
+            this.TB_Phone.TabIndex = 2;
             // 
             // L_Phone
             // 
@@ -315,7 +320,7 @@
             this.TLP_Email.AutoSize = true;
             this.TLP_Email.ColumnCount = 1;
             this.TLP_Email.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.TLP_Email.Controls.Add(this.textBox3, 0, 1);
+            this.TLP_Email.Controls.Add(this.TB_Email, 0, 1);
             this.TLP_Email.Controls.Add(this.L_Email, 0, 0);
             this.TLP_Email.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TLP_Email.Location = new System.Drawing.Point(3, 90);
@@ -326,14 +331,15 @@
             this.TLP_Email.Size = new System.Drawing.Size(252, 56);
             this.TLP_Email.TabIndex = 31;
             // 
-            // textBox3
+            // TB_Email
             // 
-            this.textBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox3.Font = new System.Drawing.Font("Calibri", 10.25F, System.Drawing.FontStyle.Bold);
-            this.textBox3.Location = new System.Drawing.Point(3, 25);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(246, 28);
-            this.textBox3.TabIndex = 2;
+            this.TB_Email.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TB_Email.Font = new System.Drawing.Font("Calibri", 10.25F, System.Drawing.FontStyle.Bold);
+            this.TB_Email.Location = new System.Drawing.Point(3, 25);
+            this.TB_Email.MaxLength = 255;
+            this.TB_Email.Name = "TB_Email";
+            this.TB_Email.Size = new System.Drawing.Size(246, 28);
+            this.TB_Email.TabIndex = 2;
             // 
             // L_Email
             // 
@@ -464,6 +470,7 @@
             this.TB_Name.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TB_Name.Font = new System.Drawing.Font("Calibri", 10.25F, System.Drawing.FontStyle.Bold);
             this.TB_Name.Location = new System.Drawing.Point(3, 25);
+            this.TB_Name.MaxLength = 255;
             this.TB_Name.Name = "TB_Name";
             this.TB_Name.Size = new System.Drawing.Size(246, 28);
             this.TB_Name.TabIndex = 1;
@@ -474,7 +481,7 @@
             this.TLP_Country.ColumnCount = 1;
             this.TLP_Country.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.TLP_Country.Controls.Add(this.L_Country, 0, 0);
-            this.TLP_Country.Controls.Add(this.comboBox1, 0, 1);
+            this.TLP_Country.Controls.Add(this.CB_Country, 0, 1);
             this.TLP_Country.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TLP_Country.Location = new System.Drawing.Point(261, 27);
             this.TLP_Country.Name = "TLP_Country";
@@ -495,13 +502,13 @@
             this.L_Country.TabIndex = 0;
             this.L_Country.Text = "Страна";
             // 
-            // comboBox1
+            // CB_Country
             // 
-            this.comboBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.Font = new System.Drawing.Font("Calibri", 10.25F);
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.CB_Country.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.CB_Country.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CB_Country.Font = new System.Drawing.Font("Calibri", 10.25F);
+            this.CB_Country.FormattingEnabled = true;
+            this.CB_Country.Items.AddRange(new object[] {
             "Афганистан",
             "Албания",
             "Антарктида",
@@ -753,10 +760,10 @@
             "Замбия",
             "Абхазия",
             "Южная Осетия"});
-            this.comboBox1.Location = new System.Drawing.Point(3, 25);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(246, 29);
-            this.comboBox1.TabIndex = 1;
+            this.CB_Country.Location = new System.Drawing.Point(3, 25);
+            this.CB_Country.Name = "CB_Country";
+            this.CB_Country.Size = new System.Drawing.Size(246, 29);
+            this.CB_Country.TabIndex = 1;
             // 
             // LoginForm
             // 
@@ -806,28 +813,28 @@
         private System.Windows.Forms.Label L_AnotherLogin;
         private System.Windows.Forms.Label LHaveAccount;
         private System.Windows.Forms.TableLayoutPanel TLP_CheckPassword;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox TB_CheckPassword;
         private System.Windows.Forms.Label L_CheckPassword;
         private System.Windows.Forms.TableLayoutPanel TLP_Password;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox TB_Password;
         private System.Windows.Forms.Label L_Password;
         private System.Windows.Forms.TableLayoutPanel TLP_Sex;
         private System.Windows.Forms.Label L_Sex;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox LB_Sex;
         private System.Windows.Forms.TableLayoutPanel TLP_Birthsday;
         private System.Windows.Forms.Label L_Birthsday;
         private System.Windows.Forms.TableLayoutPanel TLP_Phone;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox TB_Phone;
         private System.Windows.Forms.Label L_Phone;
         private System.Windows.Forms.TableLayoutPanel TLP_Email;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox TB_Email;
         private System.Windows.Forms.Label L_Email;
         private System.Windows.Forms.TableLayoutPanel TLP_Name;
         private System.Windows.Forms.Label L_Name;
         private System.Windows.Forms.TextBox TB_Name;
         private System.Windows.Forms.TableLayoutPanel TLP_Country;
         private System.Windows.Forms.Label L_Country;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.ComboBox CB_Country;
+        private System.Windows.Forms.DateTimePicker DTP_Birthsday;
     }
 }
