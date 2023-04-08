@@ -1,7 +1,7 @@
 ﻿/*
  * CLASS: Base class for implementing authorization functionality (SignInForm)
  * WHO CREATED: shonkhorovkirill2005@gmail.com (Shonkhorov Kirill)
- * DATE: 06.04.23
+ * DATE: 08.04.23
 */
 using System;
 using System.Data;
@@ -65,8 +65,8 @@ namespace Conferention.Forms
         private void LoginForm(object sender, EventArgs e)
         {
             this.Hide();
-            //LoginForm loginForm = new LoginForm();
-            //loginForm.Show();
+            LoginForm loginForm = new LoginForm();
+            loginForm.Show();
         }
         //---
         //+++Show ClientForm

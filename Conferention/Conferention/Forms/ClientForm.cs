@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+ * CLASS: Base class for implementing Personal Area functionality (ClientForm)
+ * WHO CREATED: shonkhorovkirill2005@gmail.com (Shonkhorov Kirill)
+ * DATE: 08.04.23
+*/
+using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -19,15 +24,19 @@ namespace Conferention.Forms
 
         public static string UserEmail;
 
+        //+++Main Constructor
         public ClientForm()
         {
             InitializeComponent();
         }
+        //---
 
+        //+++Exit Program Event
         private void ExitProgram(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
         }
+        //---
 
         private void BExitAccount_Click(object sender, EventArgs e)
         {

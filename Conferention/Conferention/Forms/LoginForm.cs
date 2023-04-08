@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+ * CLASS: Base class for implementing registration functionality (LoginForm)
+ * WHO CREATED: shonkhorovkirill2005@gmail.com (Shonkhorov Kirill)
+ * DATE: 08.04.23
+*/
+using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -13,34 +18,60 @@ namespace Conferention.Forms
 {
     public partial class LoginForm : ClassLibConferention.FormParent
     {
-        public static bool IsDriver = false;
-        public static string ConnectionAdress = ConnectionString.strconn;
+        //+++User's roles
+        public static bool IsParticipant = true;
+        public static bool IsJury = false;
+        public static bool IsModerator = false;
+        public static bool IsOrganizer = false;
+        //---
 
+        //+++Connection String
+        public static string ConnectionAdress = ConnectionString.strconn;
+        //---
+
+        //+++Main Constructor
         public LoginForm()
         {
             InitializeComponent();
         }
+        //---
 
+        //+++Animatoin for TextButtons
         private void DoLogIN(object sender, MouseEventArgs e)
         {
             LHaveAccount.ForeColor = SystemColors.HotTrack;
         }
-
         private void DoLogOUT(object sender, EventArgs e)
         {
             LHaveAccount.ForeColor = SystemColors.WindowFrame;
         }
-
         private void CommunityLogIN(object sender, MouseEventArgs e)
         {
-            LLoginDriver.ForeColor = SystemColors.HotTrack;
+            L_AnotherLogin.ForeColor = SystemColors.HotTrack;
         }
-
         private void CommunityLogOUT(object sender, EventArgs e)
         {
-            LLoginDriver.ForeColor = SystemColors.WindowFrame;
+            L_AnotherLogin.ForeColor = SystemColors.WindowFrame;
         }
+        //---
 
+        //+++Show SignInForm
+        private void SignInForm(object sender, EventArgs e)
+        {
+            this.Hide();
+            SignInForm SignInForm = new SignInForm();
+            SignInForm.Show();
+        }
+        //---
+
+        //+++Exit Program Event
+        private void ExitProgram(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+        //---
+
+        //+++Password Hash Function
         public static string GetHash(string password)
         {
             using (var hash = SHA256.Create())
@@ -50,23 +81,91 @@ namespace Conferention.Forms
                 Select(x => x.ToString("X2")));
             }
         }
+        //---
 
-        private void SignInForm(object sender, EventArgs e)
+        //+++Role Selector
+        private void LoginAnotherUser(object sender, EventArgs e)
         {
-            TB_Email.ShortcutsEnabled = true;
-            IsDriver = false;
+            if (IsParticipant)
+            {
+                IsParticipant = false;
+                IsJury = true;
+                IsModerator = false;
+                IsOrganizer = false;
 
-            this.Hide();
-            SignInForm SignInForm = new SignInForm();
-            SignInForm.Show();
+                L_AnotherLogin.Text = "Регистрация модератора";
+
+                LIncorrectLogin.Text = "";
+                LIncorrectLogin.Visible = false;
+                return;
+            }
+            else if (IsJury)
+            {
+                IsParticipant = false;
+                IsJury = false;
+                IsModerator = true;
+                IsOrganizer = false;
+
+                L_AnotherLogin.Text = "Регистрация организатора";
+
+                LIncorrectLogin.Text = "";
+                LIncorrectLogin.Visible = false;
+                return;
+
+            }
+            else if (IsModerator)
+            {
+                IsParticipant = false;
+                IsJury = false;
+                IsModerator = false;
+                IsOrganizer = true;
+
+                L_AnotherLogin.Text = "Регистрация участника";
+
+                LIncorrectLogin.Text = "";
+                LIncorrectLogin.Visible = false;
+                return;
+
+            }
+            else if (IsOrganizer)
+            {
+                IsParticipant = true;
+                IsJury = false;
+                IsModerator = false;
+                IsOrganizer = false;
+
+                L_AnotherLogin.Text = "Регистрация жюри";
+
+                LIncorrectLogin.Text = "";
+                LIncorrectLogin.Visible = false;
+                return;
+            }
         }
+        //---
 
-        private void ExitProgram(object sender, FormClosedEventArgs e)
+        //++++Registration Button
+        private void BtnLogin_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            if (IsParticipant)
+            {
+                //LoginParticipant();
+            }
+            else if (IsJury)
+            {
+                //LoginJury();
+            }
+            else if (IsModerator)
+            {
+                //LoginModerator();
+            }
+            else if (IsOrganizer)
+            {
+                //LoginOrganizer();
+            }
         }
+        //---
 
-        private void LoginCommunity(object sender, EventArgs e)
+        /*private void LoginCommunity(object sender, EventArgs e)
         {
             if (!IsDriver)
             {
@@ -303,6 +402,6 @@ namespace Conferention.Forms
         private void ValidateDriverPass(object sender, EventArgs e)
         {
             if (IsDriver) isValidDriverPass(TB_DriverPass.Text);
-        }
+        }*/
     }
 }

@@ -383,7 +383,7 @@ namespace Conferention.Forms
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(721, 469);
             this.Name = "ClientForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Conferention";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ExitProgram);
             this.tableLayoutPanel1.ResumeLayout(false);
