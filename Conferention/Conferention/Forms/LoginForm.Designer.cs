@@ -80,12 +80,10 @@
             this.GBRegistration.AutoSize = true;
             this.GBRegistration.Controls.Add(this.tableLayoutPanel2);
             this.GBRegistration.Font = new System.Drawing.Font("Calibri", 18.25F, System.Drawing.FontStyle.Bold);
-            this.GBRegistration.Location = new System.Drawing.Point(161, 15);
-            this.GBRegistration.Margin = new System.Windows.Forms.Padding(4);
-            this.GBRegistration.MinimumSize = new System.Drawing.Size(524, 417);
+            this.GBRegistration.Location = new System.Drawing.Point(134, 12);
+            this.GBRegistration.MinimumSize = new System.Drawing.Size(437, 331);
             this.GBRegistration.Name = "GBRegistration";
-            this.GBRegistration.Padding = new System.Windows.Forms.Padding(4);
-            this.GBRegistration.Size = new System.Drawing.Size(524, 417);
+            this.GBRegistration.Size = new System.Drawing.Size(438, 337);
             this.GBRegistration.TabIndex = 3;
             this.GBRegistration.TabStop = false;
             this.GBRegistration.Text = "Регистрация";
@@ -108,8 +106,7 @@
             this.tableLayoutPanel2.Controls.Add(this.TLP_Name, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.TLP_Country, 1, 1);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(4, 42);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 33);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 7;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -119,7 +116,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(516, 371);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(432, 301);
             this.tableLayoutPanel2.TabIndex = 3;
             // 
             // TLP_CheckPassword
@@ -130,33 +127,37 @@
             this.TLP_CheckPassword.Controls.Add(this.TB_CheckPassword, 0, 1);
             this.TLP_CheckPassword.Controls.Add(this.L_CheckPassword, 0, 0);
             this.TLP_CheckPassword.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TLP_CheckPassword.Location = new System.Drawing.Point(261, 214);
+            this.TLP_CheckPassword.Location = new System.Drawing.Point(218, 173);
+            this.TLP_CheckPassword.Margin = new System.Windows.Forms.Padding(2);
             this.TLP_CheckPassword.Name = "TLP_CheckPassword";
             this.TLP_CheckPassword.RowCount = 2;
             this.TLP_CheckPassword.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.TLP_CheckPassword.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.TLP_CheckPassword.Size = new System.Drawing.Size(252, 56);
+            this.TLP_CheckPassword.Size = new System.Drawing.Size(212, 45);
             this.TLP_CheckPassword.TabIndex = 36;
             // 
             // TB_CheckPassword
             // 
             this.TB_CheckPassword.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TB_CheckPassword.Font = new System.Drawing.Font("Calibri", 10.25F, System.Drawing.FontStyle.Bold);
-            this.TB_CheckPassword.Location = new System.Drawing.Point(3, 25);
+            this.TB_CheckPassword.Font = new System.Drawing.Font("Calibri", 10.25F);
+            this.TB_CheckPassword.Location = new System.Drawing.Point(2, 19);
+            this.TB_CheckPassword.Margin = new System.Windows.Forms.Padding(2);
             this.TB_CheckPassword.MaxLength = 255;
             this.TB_CheckPassword.Name = "TB_CheckPassword";
             this.TB_CheckPassword.PasswordChar = '*';
-            this.TB_CheckPassword.Size = new System.Drawing.Size(246, 28);
+            this.TB_CheckPassword.Size = new System.Drawing.Size(208, 24);
             this.TB_CheckPassword.TabIndex = 2;
+            this.TB_CheckPassword.TextChanged += new System.EventHandler(this.EVENT_CheckPasswordToIdentity);
             // 
             // L_CheckPassword
             // 
             this.L_CheckPassword.AutoSize = true;
             this.L_CheckPassword.Font = new System.Drawing.Font("Calibri", 10.25F);
             this.L_CheckPassword.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.L_CheckPassword.Location = new System.Drawing.Point(3, 0);
+            this.L_CheckPassword.Location = new System.Drawing.Point(2, 0);
+            this.L_CheckPassword.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.L_CheckPassword.Name = "L_CheckPassword";
-            this.L_CheckPassword.Size = new System.Drawing.Size(168, 22);
+            this.L_CheckPassword.Size = new System.Drawing.Size(131, 17);
             this.L_CheckPassword.TabIndex = 0;
             this.L_CheckPassword.Text = "Подтвердите пароль";
             // 
@@ -168,33 +169,37 @@
             this.TLP_Password.Controls.Add(this.TB_Password, 0, 1);
             this.TLP_Password.Controls.Add(this.L_Password, 0, 0);
             this.TLP_Password.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TLP_Password.Location = new System.Drawing.Point(3, 214);
+            this.TLP_Password.Location = new System.Drawing.Point(2, 173);
+            this.TLP_Password.Margin = new System.Windows.Forms.Padding(2);
             this.TLP_Password.Name = "TLP_Password";
             this.TLP_Password.RowCount = 2;
             this.TLP_Password.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.TLP_Password.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.TLP_Password.Size = new System.Drawing.Size(252, 56);
+            this.TLP_Password.Size = new System.Drawing.Size(212, 45);
             this.TLP_Password.TabIndex = 35;
             // 
             // TB_Password
             // 
             this.TB_Password.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TB_Password.Font = new System.Drawing.Font("Calibri", 10.25F, System.Drawing.FontStyle.Bold);
-            this.TB_Password.Location = new System.Drawing.Point(3, 25);
+            this.TB_Password.Font = new System.Drawing.Font("Calibri", 10.25F);
+            this.TB_Password.Location = new System.Drawing.Point(2, 19);
+            this.TB_Password.Margin = new System.Windows.Forms.Padding(2);
             this.TB_Password.MaxLength = 255;
             this.TB_Password.Name = "TB_Password";
             this.TB_Password.PasswordChar = '*';
-            this.TB_Password.Size = new System.Drawing.Size(246, 28);
+            this.TB_Password.Size = new System.Drawing.Size(208, 24);
             this.TB_Password.TabIndex = 2;
+            this.TB_Password.TextChanged += new System.EventHandler(this.EVENT_ValidationPassword);
             // 
             // L_Password
             // 
             this.L_Password.AutoSize = true;
             this.L_Password.Font = new System.Drawing.Font("Calibri", 10.25F);
             this.L_Password.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.L_Password.Location = new System.Drawing.Point(3, 0);
+            this.L_Password.Location = new System.Drawing.Point(2, 0);
+            this.L_Password.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.L_Password.Name = "L_Password";
-            this.L_Password.Size = new System.Drawing.Size(66, 22);
+            this.L_Password.Size = new System.Drawing.Size(52, 17);
             this.L_Password.TabIndex = 0;
             this.L_Password.Text = "Пароль";
             // 
@@ -206,12 +211,13 @@
             this.TLP_Sex.Controls.Add(this.L_Sex, 0, 0);
             this.TLP_Sex.Controls.Add(this.LB_Sex, 0, 1);
             this.TLP_Sex.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TLP_Sex.Location = new System.Drawing.Point(261, 152);
+            this.TLP_Sex.Location = new System.Drawing.Point(218, 124);
+            this.TLP_Sex.Margin = new System.Windows.Forms.Padding(2);
             this.TLP_Sex.Name = "TLP_Sex";
             this.TLP_Sex.RowCount = 2;
             this.TLP_Sex.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.TLP_Sex.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.TLP_Sex.Size = new System.Drawing.Size(252, 56);
+            this.TLP_Sex.Size = new System.Drawing.Size(212, 45);
             this.TLP_Sex.TabIndex = 34;
             // 
             // L_Sex
@@ -219,9 +225,10 @@
             this.L_Sex.AutoSize = true;
             this.L_Sex.Font = new System.Drawing.Font("Calibri", 10.25F);
             this.L_Sex.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.L_Sex.Location = new System.Drawing.Point(3, 0);
+            this.L_Sex.Location = new System.Drawing.Point(2, 0);
+            this.L_Sex.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.L_Sex.Name = "L_Sex";
-            this.L_Sex.Size = new System.Drawing.Size(40, 22);
+            this.L_Sex.Size = new System.Drawing.Size(31, 17);
             this.L_Sex.TabIndex = 0;
             this.L_Sex.Text = "Пол";
             // 
@@ -230,13 +237,14 @@
             this.LB_Sex.Dock = System.Windows.Forms.DockStyle.Top;
             this.LB_Sex.Font = new System.Drawing.Font("Calibri", 10.25F);
             this.LB_Sex.FormattingEnabled = true;
-            this.LB_Sex.ItemHeight = 21;
+            this.LB_Sex.ItemHeight = 17;
             this.LB_Sex.Items.AddRange(new object[] {
             "мужской",
             "женский"});
-            this.LB_Sex.Location = new System.Drawing.Point(3, 25);
+            this.LB_Sex.Location = new System.Drawing.Point(2, 19);
+            this.LB_Sex.Margin = new System.Windows.Forms.Padding(2);
             this.LB_Sex.Name = "LB_Sex";
-            this.LB_Sex.Size = new System.Drawing.Size(246, 25);
+            this.LB_Sex.Size = new System.Drawing.Size(208, 21);
             this.LB_Sex.TabIndex = 1;
             // 
             // TLP_Birthsday
@@ -247,12 +255,13 @@
             this.TLP_Birthsday.Controls.Add(this.L_Birthsday, 0, 0);
             this.TLP_Birthsday.Controls.Add(this.DTP_Birthsday, 0, 1);
             this.TLP_Birthsday.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TLP_Birthsday.Location = new System.Drawing.Point(3, 152);
+            this.TLP_Birthsday.Location = new System.Drawing.Point(2, 124);
+            this.TLP_Birthsday.Margin = new System.Windows.Forms.Padding(2);
             this.TLP_Birthsday.Name = "TLP_Birthsday";
             this.TLP_Birthsday.RowCount = 2;
             this.TLP_Birthsday.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.TLP_Birthsday.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.TLP_Birthsday.Size = new System.Drawing.Size(252, 56);
+            this.TLP_Birthsday.Size = new System.Drawing.Size(212, 45);
             this.TLP_Birthsday.TabIndex = 33;
             // 
             // L_Birthsday
@@ -260,9 +269,10 @@
             this.L_Birthsday.AutoSize = true;
             this.L_Birthsday.Font = new System.Drawing.Font("Calibri", 10.25F);
             this.L_Birthsday.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.L_Birthsday.Location = new System.Drawing.Point(3, 0);
+            this.L_Birthsday.Location = new System.Drawing.Point(2, 0);
+            this.L_Birthsday.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.L_Birthsday.Name = "L_Birthsday";
-            this.L_Birthsday.Size = new System.Drawing.Size(130, 22);
+            this.L_Birthsday.Size = new System.Drawing.Size(100, 17);
             this.L_Birthsday.TabIndex = 0;
             this.L_Birthsday.Text = "Дата рождения";
             // 
@@ -273,9 +283,10 @@
             this.DTP_Birthsday.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DTP_Birthsday.Font = new System.Drawing.Font("Calibri", 10.25F);
             this.DTP_Birthsday.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DTP_Birthsday.Location = new System.Drawing.Point(3, 25);
+            this.DTP_Birthsday.Location = new System.Drawing.Point(2, 19);
+            this.DTP_Birthsday.Margin = new System.Windows.Forms.Padding(2);
             this.DTP_Birthsday.Name = "DTP_Birthsday";
-            this.DTP_Birthsday.Size = new System.Drawing.Size(246, 28);
+            this.DTP_Birthsday.Size = new System.Drawing.Size(208, 24);
             this.DTP_Birthsday.TabIndex = 1;
             // 
             // TLP_Phone
@@ -286,32 +297,36 @@
             this.TLP_Phone.Controls.Add(this.TB_Phone, 0, 1);
             this.TLP_Phone.Controls.Add(this.L_Phone, 0, 0);
             this.TLP_Phone.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TLP_Phone.Location = new System.Drawing.Point(261, 90);
+            this.TLP_Phone.Location = new System.Drawing.Point(218, 75);
+            this.TLP_Phone.Margin = new System.Windows.Forms.Padding(2);
             this.TLP_Phone.Name = "TLP_Phone";
             this.TLP_Phone.RowCount = 2;
             this.TLP_Phone.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.TLP_Phone.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.TLP_Phone.Size = new System.Drawing.Size(252, 56);
+            this.TLP_Phone.Size = new System.Drawing.Size(212, 45);
             this.TLP_Phone.TabIndex = 32;
             // 
             // TB_Phone
             // 
             this.TB_Phone.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TB_Phone.Font = new System.Drawing.Font("Calibri", 10.25F, System.Drawing.FontStyle.Bold);
-            this.TB_Phone.Location = new System.Drawing.Point(3, 25);
+            this.TB_Phone.Font = new System.Drawing.Font("Calibri", 10.25F);
+            this.TB_Phone.Location = new System.Drawing.Point(2, 19);
+            this.TB_Phone.Margin = new System.Windows.Forms.Padding(2);
             this.TB_Phone.MaxLength = 32;
             this.TB_Phone.Name = "TB_Phone";
-            this.TB_Phone.Size = new System.Drawing.Size(246, 28);
+            this.TB_Phone.Size = new System.Drawing.Size(208, 24);
             this.TB_Phone.TabIndex = 2;
+            this.TB_Phone.Leave += new System.EventHandler(this.EVENT_ValidationPhone);
             // 
             // L_Phone
             // 
             this.L_Phone.AutoSize = true;
             this.L_Phone.Font = new System.Drawing.Font("Calibri", 10.25F);
             this.L_Phone.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.L_Phone.Location = new System.Drawing.Point(3, 0);
+            this.L_Phone.Location = new System.Drawing.Point(2, 0);
+            this.L_Phone.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.L_Phone.Name = "L_Phone";
-            this.L_Phone.Size = new System.Drawing.Size(139, 22);
+            this.L_Phone.Size = new System.Drawing.Size(106, 17);
             this.L_Phone.TabIndex = 0;
             this.L_Phone.Text = "Номер телефона";
             // 
@@ -323,32 +338,36 @@
             this.TLP_Email.Controls.Add(this.TB_Email, 0, 1);
             this.TLP_Email.Controls.Add(this.L_Email, 0, 0);
             this.TLP_Email.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TLP_Email.Location = new System.Drawing.Point(3, 90);
+            this.TLP_Email.Location = new System.Drawing.Point(2, 75);
+            this.TLP_Email.Margin = new System.Windows.Forms.Padding(2);
             this.TLP_Email.Name = "TLP_Email";
             this.TLP_Email.RowCount = 2;
             this.TLP_Email.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.TLP_Email.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.TLP_Email.Size = new System.Drawing.Size(252, 56);
+            this.TLP_Email.Size = new System.Drawing.Size(212, 45);
             this.TLP_Email.TabIndex = 31;
             // 
             // TB_Email
             // 
             this.TB_Email.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TB_Email.Font = new System.Drawing.Font("Calibri", 10.25F, System.Drawing.FontStyle.Bold);
-            this.TB_Email.Location = new System.Drawing.Point(3, 25);
+            this.TB_Email.Font = new System.Drawing.Font("Calibri", 10.25F);
+            this.TB_Email.Location = new System.Drawing.Point(2, 19);
+            this.TB_Email.Margin = new System.Windows.Forms.Padding(2);
             this.TB_Email.MaxLength = 255;
             this.TB_Email.Name = "TB_Email";
-            this.TB_Email.Size = new System.Drawing.Size(246, 28);
+            this.TB_Email.Size = new System.Drawing.Size(208, 24);
             this.TB_Email.TabIndex = 2;
+            this.TB_Email.TextChanged += new System.EventHandler(this.EVENT_ValidationEmail);
             // 
             // L_Email
             // 
             this.L_Email.AutoSize = true;
             this.L_Email.Font = new System.Drawing.Font("Calibri", 10.25F);
             this.L_Email.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.L_Email.Location = new System.Drawing.Point(3, 0);
+            this.L_Email.Location = new System.Drawing.Point(2, 0);
+            this.L_Email.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.L_Email.Name = "L_Email";
-            this.L_Email.Size = new System.Drawing.Size(50, 22);
+            this.L_Email.Size = new System.Drawing.Size(39, 17);
             this.L_Email.TabIndex = 0;
             this.L_Email.Text = "Email";
             // 
@@ -362,14 +381,13 @@
             this.tableLayoutPanel13.Controls.Add(this.L_AnotherLogin, 0, 1);
             this.tableLayoutPanel13.Controls.Add(this.LHaveAccount, 0, 0);
             this.tableLayoutPanel13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel13.Location = new System.Drawing.Point(4, 277);
-            this.tableLayoutPanel13.Margin = new System.Windows.Forms.Padding(4);
+            this.tableLayoutPanel13.Location = new System.Drawing.Point(3, 223);
             this.tableLayoutPanel13.Name = "tableLayoutPanel13";
             this.tableLayoutPanel13.RowCount = 3;
             this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel13.Size = new System.Drawing.Size(250, 66);
+            this.tableLayoutPanel13.Size = new System.Drawing.Size(210, 51);
             this.tableLayoutPanel13.TabIndex = 26;
             // 
             // LIncorrectLogin
@@ -379,10 +397,9 @@
             this.LIncorrectLogin.Dock = System.Windows.Forms.DockStyle.Top;
             this.LIncorrectLogin.Font = new System.Drawing.Font("Calibri", 10.25F);
             this.LIncorrectLogin.ForeColor = System.Drawing.Color.Red;
-            this.LIncorrectLogin.Location = new System.Drawing.Point(4, 44);
-            this.LIncorrectLogin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LIncorrectLogin.Location = new System.Drawing.Point(3, 34);
             this.LIncorrectLogin.Name = "LIncorrectLogin";
-            this.LIncorrectLogin.Size = new System.Drawing.Size(242, 22);
+            this.LIncorrectLogin.Size = new System.Drawing.Size(204, 17);
             this.LIncorrectLogin.TabIndex = 15;
             this.LIncorrectLogin.Text = "Неверный Email или пароль\r\n";
             this.LIncorrectLogin.Visible = false;
@@ -394,10 +411,9 @@
             this.L_AnotherLogin.Dock = System.Windows.Forms.DockStyle.Top;
             this.L_AnotherLogin.Font = new System.Drawing.Font("Calibri", 10.25F);
             this.L_AnotherLogin.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.L_AnotherLogin.Location = new System.Drawing.Point(4, 22);
-            this.L_AnotherLogin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.L_AnotherLogin.Location = new System.Drawing.Point(3, 17);
             this.L_AnotherLogin.Name = "L_AnotherLogin";
-            this.L_AnotherLogin.Size = new System.Drawing.Size(242, 22);
+            this.L_AnotherLogin.Size = new System.Drawing.Size(204, 17);
             this.L_AnotherLogin.TabIndex = 14;
             this.L_AnotherLogin.Text = "Регистрация жюри ";
             this.L_AnotherLogin.Click += new System.EventHandler(this.LoginAnotherUser);
@@ -411,10 +427,9 @@
             this.LHaveAccount.Dock = System.Windows.Forms.DockStyle.Top;
             this.LHaveAccount.Font = new System.Drawing.Font("Calibri", 10.25F);
             this.LHaveAccount.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.LHaveAccount.Location = new System.Drawing.Point(4, 0);
-            this.LHaveAccount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LHaveAccount.Location = new System.Drawing.Point(3, 0);
             this.LHaveAccount.Name = "LHaveAccount";
-            this.LHaveAccount.Size = new System.Drawing.Size(242, 22);
+            this.LHaveAccount.Size = new System.Drawing.Size(204, 17);
             this.LHaveAccount.TabIndex = 13;
             this.LHaveAccount.Text = "Есть аккаунт?";
             this.LHaveAccount.Click += new System.EventHandler(this.SignInForm);
@@ -428,11 +443,10 @@
             this.BtnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnLogin.Dock = System.Windows.Forms.DockStyle.Top;
             this.BtnLogin.Font = new System.Drawing.Font("Calibri", 12.25F, System.Drawing.FontStyle.Bold);
-            this.BtnLogin.Location = new System.Drawing.Point(262, 277);
-            this.BtnLogin.Margin = new System.Windows.Forms.Padding(4);
-            this.BtnLogin.MinimumSize = new System.Drawing.Size(154, 42);
+            this.BtnLogin.Location = new System.Drawing.Point(219, 223);
+            this.BtnLogin.MinimumSize = new System.Drawing.Size(128, 33);
             this.BtnLogin.Name = "BtnLogin";
-            this.BtnLogin.Size = new System.Drawing.Size(250, 42);
+            this.BtnLogin.Size = new System.Drawing.Size(210, 33);
             this.BtnLogin.TabIndex = 24;
             this.BtnLogin.Text = "Зарегестрироваться";
             this.BtnLogin.UseVisualStyleBackColor = true;
@@ -446,12 +460,13 @@
             this.TLP_Name.Controls.Add(this.L_Name, 0, 0);
             this.TLP_Name.Controls.Add(this.TB_Name, 0, 1);
             this.TLP_Name.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TLP_Name.Location = new System.Drawing.Point(3, 27);
+            this.TLP_Name.Location = new System.Drawing.Point(2, 25);
+            this.TLP_Name.Margin = new System.Windows.Forms.Padding(2);
             this.TLP_Name.Name = "TLP_Name";
             this.TLP_Name.RowCount = 2;
             this.TLP_Name.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.TLP_Name.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.TLP_Name.Size = new System.Drawing.Size(252, 57);
+            this.TLP_Name.Size = new System.Drawing.Size(212, 46);
             this.TLP_Name.TabIndex = 27;
             // 
             // L_Name
@@ -459,20 +474,22 @@
             this.L_Name.AutoSize = true;
             this.L_Name.Font = new System.Drawing.Font("Calibri", 10.25F);
             this.L_Name.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.L_Name.Location = new System.Drawing.Point(3, 0);
+            this.L_Name.Location = new System.Drawing.Point(2, 0);
+            this.L_Name.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.L_Name.Name = "L_Name";
-            this.L_Name.Size = new System.Drawing.Size(47, 22);
+            this.L_Name.Size = new System.Drawing.Size(36, 17);
             this.L_Name.TabIndex = 0;
             this.L_Name.Text = "ФИО";
             // 
             // TB_Name
             // 
             this.TB_Name.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TB_Name.Font = new System.Drawing.Font("Calibri", 10.25F, System.Drawing.FontStyle.Bold);
-            this.TB_Name.Location = new System.Drawing.Point(3, 25);
+            this.TB_Name.Font = new System.Drawing.Font("Calibri", 10.25F);
+            this.TB_Name.Location = new System.Drawing.Point(2, 19);
+            this.TB_Name.Margin = new System.Windows.Forms.Padding(2);
             this.TB_Name.MaxLength = 255;
             this.TB_Name.Name = "TB_Name";
-            this.TB_Name.Size = new System.Drawing.Size(246, 28);
+            this.TB_Name.Size = new System.Drawing.Size(208, 24);
             this.TB_Name.TabIndex = 1;
             // 
             // TLP_Country
@@ -483,12 +500,13 @@
             this.TLP_Country.Controls.Add(this.L_Country, 0, 0);
             this.TLP_Country.Controls.Add(this.CB_Country, 0, 1);
             this.TLP_Country.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TLP_Country.Location = new System.Drawing.Point(261, 27);
+            this.TLP_Country.Location = new System.Drawing.Point(218, 25);
+            this.TLP_Country.Margin = new System.Windows.Forms.Padding(2);
             this.TLP_Country.Name = "TLP_Country";
             this.TLP_Country.RowCount = 2;
             this.TLP_Country.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.TLP_Country.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.TLP_Country.Size = new System.Drawing.Size(252, 57);
+            this.TLP_Country.Size = new System.Drawing.Size(212, 46);
             this.TLP_Country.TabIndex = 28;
             // 
             // L_Country
@@ -496,9 +514,10 @@
             this.L_Country.AutoSize = true;
             this.L_Country.Font = new System.Drawing.Font("Calibri", 10.25F);
             this.L_Country.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.L_Country.Location = new System.Drawing.Point(3, 0);
+            this.L_Country.Location = new System.Drawing.Point(2, 0);
+            this.L_Country.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.L_Country.Name = "L_Country";
-            this.L_Country.Size = new System.Drawing.Size(64, 22);
+            this.L_Country.Size = new System.Drawing.Size(48, 17);
             this.L_Country.TabIndex = 0;
             this.L_Country.Text = "Страна";
             // 
@@ -760,20 +779,19 @@
             "Замбия",
             "Абхазия",
             "Южная Осетия"});
-            this.CB_Country.Location = new System.Drawing.Point(3, 25);
+            this.CB_Country.Location = new System.Drawing.Point(2, 19);
+            this.CB_Country.Margin = new System.Windows.Forms.Padding(2);
             this.CB_Country.Name = "CB_Country";
-            this.CB_Country.Size = new System.Drawing.Size(246, 29);
+            this.CB_Country.Size = new System.Drawing.Size(208, 25);
             this.CB_Country.TabIndex = 1;
             // 
             // LoginForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 29F);
-            this.ClientSize = new System.Drawing.Size(698, 445);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
+            this.ClientSize = new System.Drawing.Size(584, 361);
             this.Controls.Add(this.GBRegistration);
-            this.Margin = new System.Windows.Forms.Padding(6);
-            this.MinimumSize = new System.Drawing.Size(716, 492);
             this.Name = "LoginForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ExitProgram);
             this.Controls.SetChildIndex(this.GBRegistration, 0);
             this.GBRegistration.ResumeLayout(false);

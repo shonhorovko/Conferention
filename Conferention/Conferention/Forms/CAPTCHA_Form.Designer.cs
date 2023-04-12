@@ -92,7 +92,7 @@
             this.MaximumSize = new System.Drawing.Size(240, 300);
             this.MinimumSize = new System.Drawing.Size(240, 300);
             this.Name = "CAPTCHA_Form";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CAPTCHA";
             this.Load += new System.EventHandler(this.FCAPCHA_Load);
             this.Controls.SetChildIndex(this.pbCAPCHA, 0);

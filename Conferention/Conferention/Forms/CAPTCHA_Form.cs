@@ -1,4 +1,9 @@
-﻿using ClassLibConferention;
+﻿/*
+ * CLASS: Base class for implementing CAPTCHA functionality (CAPTCHA_Form)
+ * WHO CREATED: shonkhorovkirill2005@gmail.com (Shonkhorov Kirill)
+ * DATE: 13.04.23
+*/
+using ClassLibConferention;
 using System;
 using System.Drawing;
 
@@ -6,14 +11,22 @@ namespace Conferention.Forms
 {
     public partial class CAPTCHA_Form : FormParent
     {
+        //+++CAPTCHA is access?
         static public bool CAPTCHA = false;
-        private string text;
+        //---
 
+        //+++CAPTCHA Text
+        private string text;
+        //---
+
+        //+++Main Constructor
         public CAPTCHA_Form()
         {
             InitializeComponent();
         }
+        //---
 
+        //+++Create CAPTCHA
         private Bitmap CreateImage(int Width, int Height)
         {
             Random rnd = new Random();
@@ -99,31 +112,37 @@ namespace Conferention.Forms
 
             return result;
         }
+        //---
 
+        //+++Update CAPTCHA
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             pbCAPCHA.Image = this.CreateImage(pbCAPCHA.Width, pbCAPCHA.Height);
         }
+        //---
 
+        //+++Button OK
         private void btnOK_Click(object sender, EventArgs e)
         {
             if (tbCAPCHA.Text == this.text)
             {
                 CAPTCHA = true;
-                Close();
+                this.Close();
             }
             else
             {
                 CAPTCHA_Form.ActiveForm.Text = "Ошибка!";
                 pbCAPCHA.Image = this.CreateImage(pbCAPCHA.Width, pbCAPCHA.Height);
             }
-
-
         }
+        //---
 
+        //+++CAPTHCA Constructor
         private void FCAPCHA_Load(object sender, EventArgs e)
         {
             pbCAPCHA.Image = this.CreateImage(pbCAPCHA.Width, pbCAPCHA.Height);
         }
+        //---
+        
     }
 }

@@ -206,23 +206,30 @@ namespace Conferention.Forms
         {
             using (SqlConnection connection = new SqlConnection(ConnectionAdress))
             {
-                connection.Open();
-
-                SqlCommand command = new SqlCommand(SQL, connection);
-                SqlDataReader sqlReader = command.ExecuteReader();
-
-                if (sqlReader.HasRows == true)
+                try
                 {
-                    return true;
+                    connection.Open();
+
+                    SqlCommand command = new SqlCommand(SQL, connection);
+                    SqlDataReader sqlReader = command.ExecuteReader();
+
+                    if (sqlReader.HasRows == true)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        LIncorrectLogin.Text = "Неверный логин или пароль";
+                        LIncorrectLogin.Visible = true;
+
+                        return false;
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    LIncorrectLogin.Text = "Неверный логин или пароль";
-                    LIncorrectLogin.Visible = true;
-
+                    MessageBox.Show(ex.Message + "\nСервер выдал непредвиденную ошибку. Обратитесь к своему системному администратору для устранения неполадок.");
                     return false;
                 }
-
             }
         }
         //---

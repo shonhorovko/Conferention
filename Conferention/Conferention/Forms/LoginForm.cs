@@ -13,6 +13,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using Conferention.Classes;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Conferention.Forms
 {
@@ -27,6 +28,12 @@ namespace Conferention.Forms
 
         //+++Connection String
         public static string ConnectionAdress = ConnectionString.strconn;
+        //---
+
+        //+++Country Parsing Massive
+        private string[] arrCountry = { };
+        private int[] arrCountry_index = { };
+
         //---
 
         //+++Main Constructor
@@ -55,6 +62,16 @@ namespace Conferention.Forms
         }
         //---
 
+
+        //+++Show ClientForm
+        private void ShowClientForm(object sender, EventArgs e)
+        {
+            this.Hide();
+            ClientForm ClientForm = new ClientForm();
+            ClientForm.Show();
+        }
+        //---
+
         //+++Show SignInForm
         private void SignInForm(object sender, EventArgs e)
         {
@@ -68,6 +85,16 @@ namespace Conferention.Forms
         private void ExitProgram(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+        //---
+
+        //+++Salting password function
+        private string SaltPassword()
+        {
+            string Salt1 = "6r-2"; string Salt2 = "&0sw";
+            string SaltPassword = Salt1 + TB_Password.Text + Salt2;
+            string Password = GetHash(SaltPassword);
+            return Password;
         }
         //---
 
@@ -143,172 +170,27 @@ namespace Conferention.Forms
         }
         //---
 
-        //++++Registration Button
-        private void BtnLogin_Click(object sender, EventArgs e)
+        //+++Check fields
+        private bool FieldsIsEmpty()
         {
-
-            if (IsParticipant)
+            if (TB_Name.Text == "" || TB_Email.Text == "" || 
+                TB_Phone.Text == "" || TB_Password.Text == "" || 
+                TB_CheckPassword.Text == "" || CB_Country.SelectedIndex == -1)
             {
-                //LoginParticipant();
+                LIncorrectLogin.Text = "Заполните все поля!";
+                LIncorrectLogin.Visible = true;
+                return false;
             }
-            else if (IsJury)
+            else
             {
-                //LoginJury();
-            }
-            else if (IsModerator)
-            {
-                //LoginModerator();
-            }
-            else if (IsOrganizer)
-            {
-                //LoginOrganizer();
+                LIncorrectLogin.Text = "";
+                LIncorrectLogin.Visible = false;
+                return true;
             }
         }
         //---
 
-        /*private void LoginCommunity(object sender, EventArgs e)
-        {
-            if (!IsDriver)
-            {
-                TB_Email.Text = ""; TB_Phone.Text = ""; TB_Login.Text = ""; TB_Password.Text = ""; CB_Country.Text = ""; TB_DriverPass.Text = "";
-                LLoginDriver.Text = "Регистрация клиента";
-                TLP_DriverPass.Visible = true;
-                TLP_Country.Visible = true;
-                LIncorrectLogin.Visible = false;
-                TB_Email.ShortcutsEnabled = false;
-
-                IsDriver = true;
-            }
-            else
-            {
-                TB_Email.Text = ""; TB_Phone.Text = ""; TB_Login.Text = ""; TB_Password.Text = ""; CB_Country.Text = "";
-                LLoginDriver.Text = "Регистрация водителя";
-                TLP_DriverPass.Visible = false;
-                TLP_Country.Visible = false;
-                LIncorrectLogin.Visible = false;
-                TB_Email.ShortcutsEnabled = true;
-
-                IsDriver = false;
-            }
-        }
-
-        private void BtnLogin_Click(object sender, EventArgs e)
-        {
-            if (!IsDriver)
-            {
-                if (TB_Email.Text == "" || TB_Phone.Text == "" || TB_Login.Text == "" || TB_Password.Text == "")
-                {
-                    LIncorrectLogin.Text = "Заполните все поля";
-                    LIncorrectLogin.Visible = true;
-                }
-                else
-                {
-                    if (isValidEmail(TB_Email.Text) && isValidPhone(TB_Phone.Text) && isValidPassword(TB_Password.Text))
-                    {
-                        CAPTCHA_Form cAPTCHA_Form = new CAPTCHA_Form();
-                        cAPTCHA_Form.ShowDialog();
-
-                        if (CAPTCHA_Form.CAPTCHA)
-                        {
-                            using (SqlConnection connection = new SqlConnection(ConnectionAdress))
-                            {
-                                connection.Open();
-
-                                string Salt1 = "6r-2"; string Salt2 = "&0sw";
-                                string SaltPassword = Salt1 + TB_Password.Text + Salt2;
-                                string Password = GetHash(SaltPassword);
-
-                                string SQL = "insert into Taxi.Users ([E-mail],[Phone],[Login],[Password]) " +
-                                " values ('" + TB_Email.Text + "', '" + TB_Phone.Text + "', '"
-                                + TB_Login.Text + "', '" + Password + "')";
-
-                                SqlCommand command = new SqlCommand(SQL, connection);
-                                try
-                                {
-                                    command.ExecuteNonQuery();
-                                    ClientForm.IsDriver = false;
-                                    ClientForm.UserLogin = TB_Login.Text;
-                                    this.Hide();
-                                    ClientForm userForm = new ClientForm();
-                                    userForm.Show();
-                                }
-                                catch
-                                {
-                                    LIncorrectLogin.Text = "Этот логин уже занят \n другим пользователем";
-                                    LIncorrectLogin.Visible = true;
-                                }
-                            }
-                        }
-                        else
-                        {
-                            LIncorrectLogin.Text = "Подтвердите что вы не робот";
-                            LIncorrectLogin.Visible = true;
-                        }
-                    }
-                    else
-                    {
-                        LIncorrectLogin.Text = "Введены некорректные данные!\nПроверьте их и попробуйте снова.";
-                        LIncorrectLogin.Visible = true;
-                    }
-                }
-            }
-            else
-            {
-                if (TB_Email.Text == "" || TB_Phone.Text == "" || TB_Login.Text == "" || TB_Password.Text == "" || TB_DriverPass.Text == "" || CB_Country.Text == "")
-                {
-                    LIncorrectLogin.Text = "Заполните все поля";
-                    LIncorrectLogin.Visible = true;
-                }
-                else
-                {
-                    if (isValidDriverPass(TB_DriverPass.Text) && isValidPassword(TB_Password.Text) && isValidEmail(TB_Email.Text) && isValidPhone(TB_Phone.Text))
-                    {
-                        CAPTCHA_Form cAPTCHA_Form = new CAPTCHA_Form();
-                        cAPTCHA_Form.ShowDialog();
-
-                        if (CAPTCHA_Form.CAPTCHA)
-                        {
-                            using (SqlConnection connection = new SqlConnection(ConnectionAdress))
-                            {
-                                connection.Open();
-
-                                // посыпаем солью
-                                string Salt1 = "6r-2"; string Salt2 = "&0sw";
-                                string SaltPassword = Salt1 + TB_Password.Text + Salt2;
-                                string Password = GetHash(SaltPassword);
-
-                                string SQL = "insert into Taxi.Drivers ([E-mail],[Phone],[Driver's Passport],[Country],[Login],[Password]) " +
-                                 "values ('" + TB_Email.Text + "', '" + TB_Phone.Text + "', '"
-                                 + TB_DriverPass.Text + "', '" + CB_Country.Text + "', '" + TB_Login.Text + "', '" + Password + "')";
-
-                                SqlCommand command = new SqlCommand(SQL, connection);
-                                try
-                                {
-                                    //command.ExecuteNonQuery();
-                                    ClientForm.IsDriver = true;
-                                    ClientForm.UserLogin = TB_Login.Text;
-                                    this.Hide();
-                                    ClientForm clientForm = new ClientForm();
-                                    clientForm.Show();
-                                }
-                                catch
-                                {
-                                    LIncorrectLogin.Text = "Ошибка регистрации. \nПроверьте вводимые данные \nили сообщите вашему администратору.";
-                                    LIncorrectLogin.Visible = true;
-                                }
-                            }
-                        }
-                        else
-                        {
-                            LIncorrectLogin.Text = "Подтвердите что вы не робот";
-                            LIncorrectLogin.Visible = true;
-                        }
-                    }
-
-                }
-            }
-        }
-
+        //+++Check Email
         private bool isValidEmail(string email)
         {
             string pattern = "[.\\-_a-z0-9]+@([a-z0-9][\\-a-z0-9]+\\.)+[a-z]{2,6}";
@@ -326,7 +208,10 @@ namespace Conferention.Forms
                 return false;
             }
         }
-        public bool isValidPhone(string strIn)
+        //---
+
+        //+++Check Phone
+        private bool isValidPhone(string strIn)
         {
             string strOut = "";
             string strPattern = @"(\+7|8|\b)[\(\s-]*(\d)[\s-]*(\d)[\s-]*(\d)[)\s-]*(\d)[\s-]*(\d)[\s-]*(\d)[\s-]*(\d)[\s-]*(\d)[\s-]*(\d)[\s-]*(\d)";
@@ -337,10 +222,9 @@ namespace Conferention.Forms
             }
             if (strOut == "")
             {
-                LIncorrectLogin.Text = "Номер телефона введен неккоректно";
+                LIncorrectLogin.Text = "Номер телефона\nвведен неккоректно";
                 LIncorrectLogin.Visible = true;
                 return false;
-
             }
             else
             {
@@ -349,10 +233,11 @@ namespace Conferention.Forms
                 TB_Phone.Text = strOut;
                 return true;
             }
-
         }
+        //---
 
-        public bool isValidPassword(string PassIn)
+        //+++Check Password
+        private bool isValidPassword(string PassIn)
         {
             if (PassIn.Length >= 6)
             {
@@ -367,10 +252,12 @@ namespace Conferention.Forms
                 return false;
             }
         }
+        //---
 
-        public bool isValidDriverPass(string strIn)
+        //+++Check Password
+        private bool PasswordIsIdentity(string Password, string CheckPassword)
         {
-            if (strIn.Length == 9)
+            if (CheckPassword == Password)
             {
                 LIncorrectLogin.Text = "";
                 LIncorrectLogin.Visible = false;
@@ -378,31 +265,165 @@ namespace Conferention.Forms
             }
             else
             {
-                LIncorrectLogin.Text = "Номер водительского удостоверения\nдолжен содержать 9 цифр.";
+                LIncorrectLogin.Text = "Пароли не совпадают.";
                 LIncorrectLogin.Visible = true;
                 return false;
             }
         }
+        //---
 
-
-        private void ValidatePhone(object sender, EventArgs e)
+        //+++CAPTCHA Security
+        private bool CAPTCHA_Security()
         {
-            isValidPhone(TB_Phone.Text);
+            
+            CAPTCHA_Form capthcaForm = new CAPTCHA_Form();
+            capthcaForm.Show();
+            if (CAPTCHA_Form.CAPTCHA)
+            {
+                LIncorrectLogin.Text = "";
+                LIncorrectLogin.Visible = false;
+                CAPTCHA_Form.CAPTCHA = false;
+                return true;
+            }
+            else
+            {
+                LIncorrectLogin.Text = "Капча не пройдена.";
+                LIncorrectLogin.Visible = true;
+                return false;
+            }
         }
+        //---
 
-        private void ValidatePassword(object sender, EventArgs e)
+        //+++Registration Button
+        private void BtnLogin_Click(object sender, EventArgs e)
         {
-            isValidPassword(TB_Password.Text);
+            if (FieldsIsEmpty())
+                if (isValidEmail(TB_Email.Text))
+                    if (isValidPhone(TB_Phone.Text))
+                        if(isValidPassword(TB_Password.Text))
+                            if(PasswordIsIdentity(TB_Password.Text, TB_CheckPassword.Text))
+                                if (CAPTCHA_Security())
+                                {
+                                    string Name = TB_Name.Text;
+                                    string Password = TB_Password.Text;
+                                    string Email = TB_Email.Text;
+                                    string Phone = TB_Phone.Text;
+                                    string Country = CB_Country.Text;
+                                    string Sex = LB_Sex.Text;
+                                    string Birthsday = DTP_Birthsday.Text;
+
+                                    if (IsParticipant)
+                                    {
+                                        string SQL = "insert into conferention.[Участники] " +
+                                            "([ФИО],[страна],[Почта],[телефон],[дата_рождения],[пол],[пароль]) " +
+                                            "values ('" + Name + "', '" + Country + "', '" + Email + "', '" + Phone + 
+                                            "', '" + Birthsday + "', '" + Sex + "', '" + Password + "')";
+
+                                        if (TryToConnect(SQL))
+                                        {
+                                            ClientForm.IsParticipant = true;
+                                            ClientForm.UserEmail = Email;
+                                            this.Hide();
+                                            ClientForm clientForm = new ClientForm();
+                                            clientForm.Show();
+                                        }
+                                    }
+                                    else if (IsJury)
+                                    {
+                                        string SQL = "insert into conferention.[Жюри] " +
+                                            "([ФИО],[страна],[Почта],[телефон],[дата_рождения],[пол],[пароль]) " +
+                                            "values ('" + Name + "', '" + Country + "', '" + Email + "', '" + Phone +
+                                            "', '" + Birthsday + "', '" + Sex + "', '" + Password + "')";
+
+                                        if (TryToConnect(SQL))
+                                        {
+                                            ClientForm.IsJury = true;
+                                            ClientForm.UserEmail = Email;
+                                            this.Hide();
+                                            ClientForm clientForm = new ClientForm();
+                                            clientForm.Show();
+                                        }
+                                    }
+                                    else if (IsModerator)
+                                    {
+                                        string SQL = "insert into conferention.[Модераторы] " +
+                                            "([ФИО],[страна],[Почта],[телефон],[дата_рождения],[пол],[пароль]) " +
+                                            "values ('" + Name + "', '" + Country + "', '" + Email + "', '" + Phone +
+                                            "', '" + Birthsday + "', '" + Sex + "', '" + Password + "')";
+
+                                        if (TryToConnect(SQL))
+                                        {
+                                            ClientForm.IsModerator = true;
+                                            ClientForm.UserEmail = Email;
+                                            this.Hide();
+                                            ClientForm clientForm = new ClientForm();
+                                            clientForm.Show();
+                                        }
+                                    }
+                                    else if (IsOrganizer)
+                                    {
+                                        string SQL = "insert into conferention.[Организаторы] " +
+                                            "([ФИО],[страна],[Почта],[телефон],[дата_рождения],[пол],[пароль]) " +
+                                            "values ('" + Name + "', '" + Country + "', '" + Email + "', '" + Phone +
+                                            "', '" + Birthsday + "', '" + Sex + "', '" + Password + "')";
+
+                                        if (TryToConnect(SQL))
+                                        {
+                                            ClientForm.IsOrganizer = true;
+                                            ClientForm.UserEmail = Email;
+                                            this.Hide();
+                                            ClientForm clientForm = new ClientForm();
+                                            clientForm.Show();
+                                        }
+                                    }
+                                }
         }
+        //---
 
-        private void ValiadteDriverPass(object sender, KeyPressEventArgs e)
+        //+++Main Connection Func.
+        private bool TryToConnect(string SQL)
         {
-            if (IsDriver) isValidDriverPass(TB_DriverPass.Text);
+            using (SqlConnection connection = new SqlConnection(ConnectionAdress))
+            {
+                try
+                {
+                    connection.Open();
+
+                    SqlCommand command = new SqlCommand(SQL, connection);
+                    command.ExecuteNonQuery();
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message + "\nСервер выдал непредвиденную ошибку. Обратитесь к своему системному администратору для устранения неполадок.");
+                    return false;
+                }
+            }
         }
+        //---
 
-        private void ValidateDriverPass(object sender, EventArgs e)
+        //+++Event Func.
+        private void EVENT_ValidationEmail(object sender, EventArgs e)
         {
-            if (IsDriver) isValidDriverPass(TB_DriverPass.Text);
-        }*/
+            string Email = TB_Email.Text;
+            isValidEmail(Email);
+        }
+        private void EVENT_ValidationPhone(object sender, EventArgs e)
+        {
+            string Phone = TB_Phone.Text;
+            isValidPhone(Phone);
+        }
+        private void EVENT_ValidationPassword(object sender, EventArgs e)
+        {
+            string Password = TB_Password.Text;
+            isValidPassword(Password);
+        }
+        private void EVENT_CheckPasswordToIdentity(object sender, EventArgs e)
+        {
+            string Password = TB_Password.Text;
+            string CheckPassword = TB_CheckPassword.Text;
+            PasswordIsIdentity(Password, CheckPassword);
+        }
+        //---
     }
 }

@@ -79,6 +79,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\CAPTCHA_Form.resx">
+      <DependentUpon>CAPTCHA_Form.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ChangeDataKeyForm.resx">
       <DependentUpon>ChangeDataKeyForm.cs</DependentUpon>
     </EmbeddedResource>
