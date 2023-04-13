@@ -273,26 +273,43 @@ namespace Conferention.Forms
         //---
 
         //+++CAPTCHA Security
-        private bool CAPTCHA_Security()
+        private void CAPTCHA_Security()
         {
-            
-            CAPTCHA_Form capthcaForm = new CAPTCHA_Form();
-            capthcaForm.Show();
-            if (CAPTCHA_Form.CAPTCHA)
+            if (!CAPTCHA_Form.CAPTCHA)
             {
-                LIncorrectLogin.Text = "";
-                LIncorrectLogin.Visible = false;
-                CAPTCHA_Form.CAPTCHA = false;
-                return true;
-            }
-            else
-            {
-                LIncorrectLogin.Text = "Капча не пройдена.";
-                LIncorrectLogin.Visible = true;
-                return false;
+                CAPTCHA_Form capthcaForm = new CAPTCHA_Form();
+                capthcaForm.Show();
             }
         }
         //---
+
+        //+++Get Country Identity Num
+        private int ParsingCountry(string country)
+        {
+            string SQL = "SELECT [Идентификатор] FROM conferention.[Страны] " +
+                    "WHERE [Название страны] ='" + country + "'";
+            using (SqlConnection connection = new SqlConnection(ConnectionAdress))
+            {
+                try
+                {
+                    connection.Open();
+
+                    SqlDataAdapter sda = new SqlDataAdapter(SQL, connection);
+                    DataTable dt = new DataTable();
+                    sda.Fill(dt);
+                    string Value = dt.Rows[0][0].ToString();
+                    int CountryIdentity = Int32.Parse(Value);
+                    return CountryIdentity;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message + "\nСервер выдал непредвиденную ошибку. Обратитесь к своему системному администратору для устранения неполадок.");
+                    return 0;
+                }
+            }
+        }
+        //---
+
 
         //+++Registration Button
         private void BtnLogin_Click(object sender, EventArgs e)
@@ -300,10 +317,15 @@ namespace Conferention.Forms
             if (FieldsIsEmpty())
                 if (isValidEmail(TB_Email.Text))
                     if (isValidPhone(TB_Phone.Text))
-                        if(isValidPassword(TB_Password.Text))
-                            if(PasswordIsIdentity(TB_Password.Text, TB_CheckPassword.Text))
-                                if (CAPTCHA_Security())
+                        if (isValidPassword(TB_Password.Text))
+                            if (PasswordIsIdentity(TB_Password.Text, TB_CheckPassword.Text))
+
+                                CAPTCHA_Security();
+
+                                if (CAPTCHA_Form.CAPTCHA)
                                 {
+                                    CAPTCHA_Form.CAPTCHA = false;
+
                                     string Name = TB_Name.Text;
                                     string Password = TB_Password.Text;
                                     string Email = TB_Email.Text;
@@ -312,11 +334,13 @@ namespace Conferention.Forms
                                     string Sex = LB_Sex.Text;
                                     string Birthsday = DTP_Birthsday.Text;
 
+                                    int CountryIdentity = ParsingCountry(Country);
+
                                     if (IsParticipant)
                                     {
                                         string SQL = "insert into conferention.[Участники] " +
                                             "([ФИО],[страна],[Почта],[телефон],[дата_рождения],[пол],[пароль]) " +
-                                            "values ('" + Name + "', '" + Country + "', '" + Email + "', '" + Phone + 
+                                            "values ('" + Name + "'," + CountryIdentity + ", '" + Email + "', '" + Phone +
                                             "', '" + Birthsday + "', '" + Sex + "', '" + Password + "')";
 
                                         if (TryToConnect(SQL))
@@ -331,8 +355,8 @@ namespace Conferention.Forms
                                     else if (IsJury)
                                     {
                                         string SQL = "insert into conferention.[Жюри] " +
-                                            "([ФИО],[страна],[Почта],[телефон],[дата_рождения],[пол],[пароль]) " +
-                                            "values ('" + Name + "', '" + Country + "', '" + Email + "', '" + Phone +
+                                            "([ФИО],[страна],[почта],[телефон],[дата рождения],[пол],[пароль]) " +
+                                            "values ('" + Name + "'," + CountryIdentity + ", '" + Email + "', '" + Phone +
                                             "', '" + Birthsday + "', '" + Sex + "', '" + Password + "')";
 
                                         if (TryToConnect(SQL))
@@ -347,8 +371,8 @@ namespace Conferention.Forms
                                     else if (IsModerator)
                                     {
                                         string SQL = "insert into conferention.[Модераторы] " +
-                                            "([ФИО],[страна],[Почта],[телефон],[дата_рождения],[пол],[пароль]) " +
-                                            "values ('" + Name + "', '" + Country + "', '" + Email + "', '" + Phone +
+                                            "([ФИО],[страна],[почта],[телефон],[дата рождения],[пол],[пароль]) " +
+                                            "values ('" + Name + "'," + CountryIdentity + ", '" + Email + "', '" + Phone +
                                             "', '" + Birthsday + "', '" + Sex + "', '" + Password + "')";
 
                                         if (TryToConnect(SQL))
@@ -363,8 +387,8 @@ namespace Conferention.Forms
                                     else if (IsOrganizer)
                                     {
                                         string SQL = "insert into conferention.[Организаторы] " +
-                                            "([ФИО],[страна],[Почта],[телефон],[дата_рождения],[пол],[пароль]) " +
-                                            "values ('" + Name + "', '" + Country + "', '" + Email + "', '" + Phone +
+                                            "([ФИО],[страна],[Почта],[телефон],[Дата рождения],[пол],[пароль]) " +
+                                            "values ('" + Name + "'," + CountryIdentity + ", '" + Email + "', '" + Phone +
                                             "', '" + Birthsday + "', '" + Sex + "', '" + Password + "')";
 
                                         if (TryToConnect(SQL))
@@ -376,7 +400,7 @@ namespace Conferention.Forms
                                             clientForm.Show();
                                         }
                                     }
-                                }
+                                }  
         }
         //---
 

@@ -7,6 +7,6 @@ namespace Conferention.Classes
 {
     class ConnectionString
     {
-        public static string strconn = @"Data Source=SOVIET-2\LOCALSQL;Initial Catalog=007a1_shonhorovko;Integrated Security=True";
+        public static string strconn = @"Data Source=DBSRV\max2022;Initial Catalog=007a1_shonhorov;Integrated Security=True";
     }
 }
