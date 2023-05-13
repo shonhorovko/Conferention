@@ -30,12 +30,6 @@ namespace Conferention.Forms
         public static string ConnectionAdress = ConnectionString.strconn;
         //---
 
-        //+++Country Parsing Massive
-        private string[] arrCountry = { };
-        private int[] arrCountry_index = { };
-
-        //---
-
         //+++Main Constructor
         public LoginForm()
         {
@@ -61,7 +55,6 @@ namespace Conferention.Forms
             L_AnotherLogin.ForeColor = SystemColors.WindowFrame;
         }
         //---
-
 
         //+++Show ClientForm
         private void ShowClientForm(object sender, EventArgs e)
